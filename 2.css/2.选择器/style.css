@@ -1,0 +1,72 @@
+.a {
+    float: left;
+}
+
+[att=a],
+[att=b],
+[att=c],
+[att=d],
+[att=e] {
+    width: 180px;
+    height: 182px;
+}
+
+.car1 {
+    left: 330px;
+    top: px;
+}
+
+
+
+[att=a] {
+    left: 330px;
+    top: 170px;
+}
+
+[att=b] {
+    left: 800px;
+    top: 170px;
+}
+
+
+.cont {
+    text-align: center;
+}
+
+.cont h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+h1+p {
+
+    font-size: 24px;
+    color: #666;
+}
+
+.usual {
+    text-align: center;
+}
+
+.usual h1 {
+
+    font-size: 36px;
+    text-shadow: 2px 2px 2px #999;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1~p {
+
+    font-size: 24px;
+    color: #666;
+
+}
+
+.wei {
+    text-align: center;
+    background-image: url('image/8-1.jpg');
+}
+
+.wei:hover {
+    background-image: url('image/8-1a.jpg');
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        function preson(name, gender, age, job) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.job = job;
+            this.introduce = function () {
+                document.write(this.name + "is " + this.age + " years old.");
+                if (this.gender == "male") {
+                    document.write("His job is " + this.job + ".");
+                } else {
+                    document.write("her job is " + this.job + ".");
+                }
+            }
+        }
+        var p1 = new preson('John', 'male', 30, 'teacher');
+        p1.introduce();
+    </script>
+
+    <h1>使用object</h1>
+    <script>
+        var goods = new Object();
+        goods.name = "book";
+        goods.price = 100;
+        goods.color = "red";
+        document.write("the name of the red goods is " + goods.name + ", the price is " + goods.price + ", the color is " + goods.color);
+    </script>
+
+</body>
+
+</html>

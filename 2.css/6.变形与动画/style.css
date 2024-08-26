@@ -1,0 +1,92 @@
+.ch {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    transition: transform 2s ease;
+}
+
+.ch:hover {
+    transform: translate(110px, 120px);
+
+}
+
+.ch:active {
+    transform: rotate(120deg);
+}
+
+.sc {
+    width: 100px;
+    height: 100px;
+    background-color: #0f0;
+    transition: transform 2s ease;
+    margin: 200px;
+}
+
+.sc:hover {
+    transform: scale(1.5);
+}
+
+.sk {
+    width: 100px;
+    height: 100px;
+    background-color: #00f;
+    transition: transform 2s ease;
+
+}
+
+.sk:hover {
+    transition-delay: 1s;
+    transform: skew(30deg);
+}
+
+
+.cartoon {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.c {
+    font-style: italic;
+    font-size: 30px;
+    color: aliceblue;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.c:hover {
+    animation: swing 2s ease infinite;
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate(20deg)
+    }
+
+    ;
+
+    40% {
+        transform: rotae(-20deg);
+    }
+
+    60% {
+        transform: rotae(10deg)
+    }
+
+    ;
+
+    80% {
+        transform: rotae(-10deg)
+    }
+
+    ;
+
+    100% {
+        transform: rotae(0deg)
+    }
+
+    ;
+}

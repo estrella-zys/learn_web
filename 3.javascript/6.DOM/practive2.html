@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .a {
+            width: 130px;
+            height: 97px;
+            transform: rotate(10deg);
+
+            position: absolute;
+        }
+
+        .b {
+            width: 130px;
+            height: 97px;
+            transform: rotate(-20deg);
+
+            position: absolute;
+        }
+
+        .c {
+
+            width: 130px;
+            height: 97px;
+            transform: rotate(30deg);
+
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(image/bg.png);" onload="pageload()">
+    <img id="img1" class="a" src="image/Lighthouse.jpg" onmousedown="onmousedown(event)">
+    <img id="img2" class="b" src="image/Penguins.jpg" onmousedown="onmousedown(event)">
+    <img id="img3" class="c" src="image/Tulips.jpg" onmousedown="onmousedown(event)">
+    <script>
+        function $$(id) {
+            return document.getElementById(id);
+        }
+        var initX, initY, offsetX, offsetY;
+        function pageload() {
+            var img1 = $$("img1");
+            var img2 = $$("img2");
+            var img3 = $$("img3");
+            img1.style.left = 30 + "px";
+            img1.style.top = 20 + "px";
+            img2.style.left = 130 + "px";
+            img2.style.top = 120 + "px";
+            img3.style.left = 230 + "px";
+            img3.style.top = 220 + "px";
+        }
+        function onmousedown(event) {
+            initX = parseInt(event.target.style.left);
+            initY = parseInt(event.target.style.top);
+            offsetX = event.clientX;
+            offsetY = event.clientY;
+            document.onmousemove = function (e) {
+                var x = initX + e.clientX - offsetX;
+                var y = initY + e.clientY - offsetY;
+                event.target.style.left = x + 'px';
+                event.target.style.top = y + 'px';
+                return false;
+            }
+
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

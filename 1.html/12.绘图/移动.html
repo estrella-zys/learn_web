@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .a{
+                background-image: url('carb.jpg');
+                background-color: black;
+                width: 850;
+                height: 650;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>移动</h1>
+        <div width = "850" height = "650" style = "border: 1px solid black;">
+            <canvas id = "1" width = "800" height = "600" style = "background-image : url('carb.jpg')"></canvas>
+            <input type = "button" id = "btn" onclick="move()" value = "移动"></inout>
+            <script>
+                var cav = document.getElementById("1").getContext("2d");
+                var i = 0;
+                function move() {
+                    if (i < 69) {
+                        cav.clearRect(50, 500, 80, 80);
+                        var img = new Image();
+                        img.src = "car.png";
+                        img.onload = function() {
+                            cav.drawImage(img, 50, 500, 80, 80);
+                        }
+                        cav.translate(10, 0);
+                        i++;
+                    }
+                    if (i == 30) {
+                        alter("前方无路，请勿驾驶！");
+                    }
+                }
+                </script>
+        </div>
+        
+
+        <h1>缩放</h1>
+        <canvas id = "push" width = 800 height = 600 style = "background-image: url('carb.jpg');"></canvas>
+        <input type = "button" id = "btn2" value = "长大" onclick = "big()"></inout>
+        <script>
+            var ctx = document.getElementById("push");
+            var cav = ctx.getContext("2d");
+            cav.translate(ctx.height / 2, ctx.width / 2);
+            function big() {
+                cav.clearRect(-25, -25, 50, 50);
+                var img = new Image();
+                img.src = "flower.png";
+                img.onload = function() {
+                    cav.drawImage(img, -25, -25, 50, 50);
+                }
+                cav.scale(1.05, 1.05);
+            }
+        </script>
+
+
+        <h1>旋转</h1>
+        <canvas id = "rotate" width = "1000" height = "750" style ="background-image: url('bg2.jpg')"></canvas>
+        <img src = "phone.png" id = "btn3" alt = "">
+        <script>
+            window.onload = function showpic() {
+                var cav = document.getElementById("rotate").getContext("2d");
+                var bt = document.getElementById("btn3");
+                for (var i = 0; i < 5; i++) {
+                    cav.beginPath();
+                    cav.translate(890, -155);
+                    cav.rotate(2 * Math.PI / 5);
+                    cav.drawImage(bt, 450, 350, 88, 150);
+                }
+            }
+        </script>
+    </body>
+</html>

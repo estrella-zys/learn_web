@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图像与多媒体</title>
+	<meta charset="UTF-8">
+</head>
+    <body>
+        <section>
+            <h1>视频音频</h1>
+            <audio src = "http://mingri/demo/test.mp3" width="320" height="240" controls>1111</audio>
+
+            <video src = "04407d3ea87d9a53e7731dc862ff8c6d.mp4" width="320" height="240" preload="auto" controls autoplay loop = "loop" id = "1">2222</video>
+            <script>
+                var video = document.getElementById("1");
+                video.addEventListener("error", function(){
+                    var error = video.error;
+                    switch(error.code) {
+                        case 1:
+                            alter("视频下载过程被终止");
+                            break;
+                        case 2:
+                            alert("网络发生故障，无法下载视频");
+                            break;
+                        case 3:
+                            alter("解码失败");
+                            break;
+                        case 4:
+                            alert("视频源不可用");
+                            break;
+                        default:
+                            alert("未知错误");
+                    }
+                }, false);
+            </script>
+
+            <script>
+                var video = document.getElementById("1");
+                video.addEventListener("progress", function(e) {
+                    var networkStateDisplay = document.getElementById("networkState");
+                    if (video.networkState == 2) {
+                        networkStateDisplay.innerHTML = "加载中...["+e.loaded + "/" + e.total + "byte]";
+                    } else if(video.networkState == 3) {
+                        networkStateDisplay.innerHTML = "加载失败";
+                    }
+                }, false);
+            </script>
+
+            <h1>媒体播放方法</h1>
+            <div class = "videoContainer">
+                <video id = "videoPlayer" ontimeupdate="progressUpdate()" width = "320" height = "240" controls>
+                    <source src = "04407d3ea87d9a53e7731dc862ff8c6d.mp4" type = "video/mp4">
+                </video>
+            </div>
+
+            <div class = "barContainer">
+                <div id = durationBar>
+                    <div id = "positionBar">
+                        <span id = "displayStatus">进度条.</span>
+                    </div>
+                </div>
+            </div>
+            <div class = "btn">
+                <button onclick = "play()">播放</button>
+                <button onclick = "pause()">暂停</button>
+                <button onclick = "stop()">停止</button>
+                <button onclick = "speedUp()">加速</button>
+                <button onclick = "slowDown()">减速</button>
+                <button onclick = "normalSpeed()">正常速度</button>
+            </div>
+
+            <script>
+                var video;
+                var display;
+                window.omload = function() {
+                    video = document.getElementById("videoPlayer");
+                    display = document.getElementById("displayStatus");
+                }
+
+                function play() {
+                    video.play();
+                }
+
+                function pause() {
+                    video.pause();
+                }
+
+                function stop() {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+
+                function speedUp() {
+                    video.play;
+                    video.palybackRate = 2;
+                }
+
+                function slowDown() {
+                    video.play();
+                    video.playbackRate = 0.5;
+                }
+
+                function normalSpeed() {
+                    video.play();
+                    video.playbackRate = 1;
+                }
+
+                function progressUpdate() {
+                    var progressBar = document.getElementById("positionBar");
+                    positionBar.style.width = (video.currentTime / video.duration * 100) + "%";
+                    displayStatus.innerHTML = (Math.round(video.currentTime * 100) / 100) + "秒";
+                }
+            </script>
+            <h1>事件</h1>
+            <video id = "video" width="200" height="150">
+                <source src = "04407d3ea87d9a53e7731dc862ff8c6d.mp4" type = "video/mp4">
+                <source src = "04407d3ea87d9a53e7731dc862ff8c6d.webm" type = "video/webm">
+            </video>
+            <button id = "playButton" onclick = "playOrPauseVideo()">播放</button>
+            <span id = "time"></span>
+
+            <script>
+                function playOrPauseVideo() {
+                    var video = document.getElementById("video");
+                    video.addEventListener("timeupdate", function() {
+                        var timeDisplay = document.getElementById("time");
+                        timeDisplay.innerHTML = Math.floor(video.currentTime) + "/" + Math.floor(video.duration) + "(秒)";
+                    }, false);
+                }
+
+                if (video.ended) {
+                    video.currentTime = 0;
+                }
+                video[video.pause?'play': 'pause'];
+            </script>
+        </section>
+
+
+    </body>
+</html>

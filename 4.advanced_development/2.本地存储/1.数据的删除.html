@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <textarea id="data"></textarea>
+    <br>
+    <input type="button" value="添加" onclick="add1()">
+    <input type="button" value="清空" onclick="clear1('msg')">
+    <br>
+    <p id="msg"></p>
+
+    <script>
+        function add1() {
+            var data = document.getElementById("data").value;
+            var time = new Date().getTime();
+            localStorage.setItem(time, data);
+            alert("数据添加成功！");
+            loadStorage('msg');
+        }
+
+        function clear1(id) {
+            localStorage.clear();
+            var target = document.getElementById(id);
+            target.innerHTML = '';
+        }
+
+        function loadStorage(id) {
+            var result = '<table border="1" cellspacing="0" cellpadding="10">';
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var data = new Date();
+                data.setTime(key);
+                var datastr = data.toGMTString();
+                result += '<tr><td>' + value + '</td><td>' + datastr + '</td></tr>';
+            }
+            result += '</table>';
+            var target = document.getElementById(id);
+            target.innerHTML = result;
+        }
+
+        function clear1(id) {
+            localStorage.clear();
+            alert("数据已清空！");
+            loadStorage('msg');
+        }
+    </script>
+
+
+    <h1>日记本</h1>
+
+    标题：<input type="text" id="title">
+    <br>
+    <br>
+    文本：<br><textarea id="result" style="width: 200px; height: 200px;"></textarea><br>
+    <input type="button" value="添加" onclick="onstorage()">
+    <input type="button" value="查询" onclick="search()">
+    <br>
+    <br>
+    <div id="show"></div>
+    <script>
+        var title = document.getElementById("title");
+        var result = document.getElementById("result");
+
+        function onstorage() {
+
+            localStorage.setItem(title.value, result.value);
+            alert("数据添加成功！");
+
+        }
+
+        function search() {
+            if (title.value == "") {
+                alert("请输入标题！");
+            } else {
+                var show = document.getElementById("show");
+                var data = localStorage.getItem(title.value);
+                if (data) {
+                    show.innerHTML = '<textarea style="width: 200px; height: 200px;">' + data + '</textarea>';
+                } else {
+                    show.innerHTML = '没有找到相关数据。';
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
