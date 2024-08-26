@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body onload="resize()">
+    <img src="image/menu_son.gif">
+    <br>
+    <div style="width: 400px; height: 200px;"></div>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+    <img src="image/navigation_bg_move.gif">
+    <br>
+    <br>
+
+    <script>
+        var x = 0;
+        function scroller() {
+            x++;
+            scrollTo(0, x);
+            var time = setTimeout("scroller()", 10);
+            if (x >= 1000) {
+                clearTimeout(time);
+            }
+        }
+
+    </script>
+    <a href="https://www.baidu.com">百度</a>
+    <a href="https://www.google.com">谷歌</a>
+    <a href="javascript:window.history.forward();">forward</a>
+    <a href="javascript:window.history.back()">back</a>
+    <a href="javascript:window.history.go(-2)">向后退一次</a>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="show" style=" width: 200px; height: 200px; border: 1px solid black;"></div>
+    <form name="myForm">
+        请输入文本：
+        <input type="text" name="text">
+        <select name="select">
+            <option value="red">红色</option>
+            <option value="green">绿色</option>
+            <option value="blue">蓝色</option>
+        </select>
+        <input type="button" value="添加" onclick="addText()">
+    </form>
+    <script>
+        function addText() {
+            var d = document.createElement("div");
+            var text = myForm.text.value;
+            txt = document.createTextNode(text);
+            d.style.color = myForm.select.value;
+            d.appendChild(txt);
+            document.getElementById("show").appendChild(d);
+        }
+    </script>
+
+    <h1>插入节点</h1>
+    <div id="a" style="width: 100px; height: 100px; background-color: red;">
+        <div id="b" style="width: 50px; height: 50px; background-color: green;"></div>
+    </div>
+    <input type="button" value="插入" onclick="insertNode()">
+    <script>
+        function insertNode() {
+            var d = document.createElement("div");
+            d.style.width = "50px";
+            d.style.height = "50px";
+            d.style.backgroundColor = "blue";
+            var a = document.getElementById("a");
+            a.insertBefore(d, a.firstChild);
+        }
+    </script>
+
+    <h1>删除节点</h1>
+    <div id="c">
+        <p>第一段</p>
+        <p>第二段</p>
+        <p>第三段</p>
+        <input type="button" value="删除" onclick="deleteNode()">
+        <script>
+            function deleteNode() {
+                var d = document.getElementById("c");
+                if (d.hasChildNodes()) {
+                    d.removeChild(d.firstChild);
+                }
+            }
+        </script>
+    </div>
+
+    <h1>替换节点</h1>
+    <div id="change" style="width: 100px; height: 100px; background-color: red;">
+    </div>
+    <select name="color" onchange="changeColor(event)">
+        <option value="red">红色</option>
+        <option value="green">绿色</option>
+        <option value="blue">蓝色</option>
+        <option value="yellow">黄色</option>
+    </select>
+    <script>
+        function changeColor(event) {
+            var ch = document.getElementById("change");
+            var d = document.createElement("div");
+            d.style.width = "150px";
+            d.style.height = "150px";
+            d.style.backgroundColor = event.target.value;
+            document.body.replaceChild(d, ch);
+        }
+    </script>
+</body>
+
+</html>

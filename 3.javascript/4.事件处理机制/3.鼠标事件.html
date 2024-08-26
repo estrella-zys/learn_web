@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="box" style="width: 500px; height: 500px; background-color: aliceblue; position: relative;">
+        <input name="color" type="button" style="padding: 10px;" value="变化背景" onclick="change()">
+    </div>
+    <script>
+        var n = 0;
+        function change() {
+            var c = ['red', 'blue', 'pink', 'green', 'yellow', 'purple', 'orange', 'brown', 'gray'];
+            if (n == c.length) {
+                n = 0;
+            }
+            var boxElement = document.getElementById('box');
+            boxElement.style.backgroundColor = c[n];
+            n++;
+        }
+    </script>
+
+    <br>
+    <br>
+
+    <div id="a" style="width: 200px; height: 200px; background-color: red;" onmousedown="mousedown()"
+        onmouseup="mouseup()" onmousemove="mousemove(event)" onmouseout="mouseout(event)"></div>
+    <script>
+        function mousedown(event) {
+            var d = document.getElementById('a');
+            d.style.backgroundColor = 'blue';
+        }
+        function mouseup(event) {
+            var d = document.getElementById('a');
+            d.style.backgroundColor = 'green';
+        }
+    </script>
+    <br>
+    <br>
+
+    <div id="b" style="width: 200px; height: 200px; background-color: red;" onmouseover="mouseover()"
+        onmouseout="mouseout()"></div>
+    <script>
+        function mouseover() {
+            var d = document.getElementById('b');
+            d.style.backgroundColor = 'pink';
+            d.style.borderRadius = '5%';
+        }
+        function mouseout() {
+            var d = document.getElementById('b');
+            d.style.backgroundColor = 'purple';
+            d.style.opacity = 0.5;
+        }
+    </script>
+
+
+    <br>
+    <br>
+    <div>
+        <span id="position"></span>
+        <script>
+            var x = 0;
+            var y = 0;
+            function getPosition() {
+                x = window.event.x;
+                y = window.event.y;
+                document.getElementById('position').innerHTML = "鼠标位置：(" + x + "," + y + ")";
+            }
+
+            document.onmousemove = getPosition;
+        </script>
+    </div>
+</body>
+
+</html>

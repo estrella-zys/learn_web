@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <form>
+        <input type="text" id="txt" value="请输入你最喜欢的一句话">
+        <input type="button" value="submit" onclick="pro()">
+    </form>
+    <div id="show"></div>
+    <script>
+        function pro() {
+            var a = document.getElementById("txt");
+            var word = window.prompt(a.value, "");
+            document.getElementById("show").innerHTML = word;
+            a.value = word;
+        }
+    </script>
+    <br>
+    <br>
+    <form>
+        <input type="password" id="p1"><br>
+        <br>
+        <input type="password" id="p2">
+        <input type="button" value="submit" onclick="check()">
+    </form>
+
+    <script>
+        function check() {
+            var p1 = document.getElementById("p1");
+            var p2 = document.getElementById("p2");
+            if (p1.value != p2.value) {
+                alert("两次输入的密码不一致！");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

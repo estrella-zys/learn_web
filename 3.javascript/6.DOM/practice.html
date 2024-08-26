@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <select id="year" onchange="getday()">
+        <script type="text/javascript">
+            var mydate = new Date();
+            for (i = 1990; i <= mydate.getFullYear(); i++) {
+                document.write("<option value='" + i + "' " + (i == 1986 ? "selected" : "") + ">" + i + "年</option>");
+            }
+        </script>
+    </select>
+
+    <select id="month" onchange="getday()">
+        <script type="text/javascript">
+            for (i = 1; i <= 12; i++) {
+                document.write("<option value='" + i + "' " + (i == 1 ? "selected" : "") + ">" + i + "月</option>");
+            }
+        </script>
+    </select>
+    <select id="day" onchange="getday()">
+        <script type="text/javascript">
+            for (i = 1; i <= 31; i++) {
+                document.write("<option value='" + i + "' " + (i == 1 ? "selected" : "") + ">" + i + "日</option>");
+            }		  
+        </script>
+    </select>
+    <script>
+        function append(d, v) {
+            var option = document.createElement("option");
+            option.value = v;
+            option.innerText = v + '日';
+            d.appendChild(option);
+        }
+        function getday() {
+            var year = document.getElementById("year");
+            var month = document.getElementById("month");
+            var day = document.getElementById("day");
+            day.innerHTML = "";
+            if (month.value == (4 || 6 || 9 || 11)) {
+                for (var i = 1; i <= 30; i++) {
+                    append(day, i);
+                }
+            }
+            if (month.value == 2 && (year.value % 4 == 0 && year.value % 100 != 0 || year.value % 400 == 0)) {
+                for (var i = 1; i <= 29; i++) {
+                    append(day, i);
+                }
+            } else if (month.value == 2) {
+                for (var i = 1; i <= 28; i++) {
+                    append(day, i);
+                }
+            } else {
+                for (var i = 1; i <= 31; i++) {
+                    append(day, i);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <input type="checkbox" class="checkbox">篮球
+    <input type="checkbox" class="checkbox" checked>足球
+    <input type="checkbox" class="checkbox">乒乓球
+    <input type="checkbox" class="checkbox" checked>网球
+    <br>
+    <input type="button" value="全选" onclick="all()">
+    <input type="button" value="全不选" onclick="none()">
+    <input type="button" value="反选" onclick="reverse()">
+    <script>
+        function all() {
+            var ch = document.getElementsByClassName("checkbox");
+            for (var i = 0; i < ch.length; i++) {
+                ch[i].checked = 1;
+            }
+        }
+
+        function none() {
+            var ch = document.getElementsByClassName("checkbox");
+            for (var i = 0; i < ch.length; i++) {
+                ch[i].checked = 0;
+            }
+        }
+
+        function reverse() {
+            var ch = document.getElementsByClassName("checkbox");
+            for (var i = 0; i < ch.length; i++) {
+                ch[i].checked = !ch[i].checked;
+            }
+        }
+    </script>
+</body>
+
+</html>
