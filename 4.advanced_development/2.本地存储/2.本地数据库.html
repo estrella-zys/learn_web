@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>本地用户登录</title>
+</head>
+
+<body>
+
+    <h1>本地用户登录</h1>
+    <form>
+        用户名：<input type="text" name="username" id="name"><br><br>
+        密码：<input type="password" name="password" id="password"><br><br>
+        <input type="button" id="save" value="登录">
+        <input type="button" id="clear" value="注销">
+    </form>
+
+    <dl id="datalist"></dl>
+
+    <script>
+        var db;
+        var request = indexedDB.open('myDatabase', 1);
+        //新建数据库
+        request.onupgradeneeded = function (event) {
+            db = event.target.result;
+
+            if (!db.objectStoreNames.contains('msgDate')) {
+                var objectStore = db.createObjectStore('msgDate', { keyPath: 'id', autoIncrement: true });
+                objectStore.createIndex('name', 'name', { unique: false });
+                objectStore.createIndex('password', 'password', { unique: false });
+                objectStore.createIndex('time', 'time', { unique: false });
+            }
+        };
+
+        request.onsuccess = function (event) {
+            db = event.target.result;
+            showAllData();
+        };
+
+        request.onerror = function (event) {
+            console.error('Database error:', event.target.errorCode);
+        };
+
+        document.getElementById('clear').onclick = function () {
+            var transaction = db.transaction(['msgDate'], 'readwrite');
+            var objectStore = transaction.objectStore('msgDate');
+            objectStore.clear().onsuccess = function () {
+                removeData();
+                alert('所有数据已清除');
+            };
+        };
+
+        document.getElementById('save').onclick = function () {
+            saveData();
+            return false;
+        };
+
+        function removeData() {
+            var datalist = document.getElementById('datalist');
+            while (datalist.firstChild) {
+                datalist.removeChild(datalist.firstChild);
+            }
+        }
+
+        function showData(row) {
+            var datalist = document.getElementById('datalist');
+
+            var dt = document.createElement('dt');
+            dt.innerHTML = "用户名：" + row.name;
+
+            var dd = document.createElement('dd');
+            dd.innerHTML = "密码：" + row.password;
+
+            var tt = document.createElement('tt');
+            var t = new Date(row.time);
+            tt.innerHTML = "时间：" + t.toLocaleDateString() + " " + t.toLocaleTimeString();
+
+            datalist.appendChild(dt);
+            datalist.appendChild(dd);
+            datalist.appendChild(tt);
+        }
+
+        function showAllData() {
+            var transaction = db.transaction(['msgDate'], 'readonly');
+            var objectStore = transaction.objectStore('msgDate');
+            var request = objectStore.openCursor();
+
+            request.onsuccess = function (event) {
+                var cursor = event.target.result;
+                removeData();
+                if (cursor) {
+                    showData(cursor.value);
+                    cursor.continue();
+                }
+            };
+
+            request.onerror = function (event) {
+                console.error('Error fetching data:', event.target.errorCode);
+            };
+        }
+
+        function addData(name, password, time) {
+            var transaction = db.transaction(['msgDate'], 'readwrite');
+            var objectStore = transaction.objectStore('msgDate');
+            var request = objectStore.add({ name: name, password: password, time: time });
+
+            request.onsuccess = function () {
+                alert('登录成功！');
+            };
+
+            request.onerror = function (event) {
+                alert("Error: " + event.target.error.message);
+            };
+        }
+
+        function saveData() {
+            var name = document.getElementById('name').value;
+            var password = document.getElementById('password').value;
+            var time = new Date().getTime();
+            addData(name, password, time);
+            showAllData();
+        }
+    </script>
+</body>
+
+</html>

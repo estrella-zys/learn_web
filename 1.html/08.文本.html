@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>进度条示例</title>
+</head>
+
+<body>
+    <p>2X+4<sup>2</sup>= 16</p>
+    <pre>
+                ... ....
+            ...............
+        .....................
+
+    ..........
+    </pre>
+    <p>
+    <blockquote>java</blockquote>是一门面向对象的编程语言，它由Sun Microsystems公司于1995年推出，是一种静态面向对象编程语言。
+    </p>
+    <mark style="color: aqua;"><strong>java</strong></mark>
+    <details>
+        <summary>java</summary>
+        <p>java是一门面向对象的编程语言，它由Sun Microsystems公司于1995年推出，是一种静态面向对象编程语言。</p>
+    </details>
+
+    <article>
+        <h1>进度条</h1>
+        <script>
+            var intervalId;
+
+            function button_onclick() {
+                var progressBar = document.getElementById("p");
+                progressBar.value = 0;
+                progressBar.getElementsByTagName("span")[0].textContent = "0";
+
+                var i = 0;
+                intervalId = setInterval(function () {
+                    if (i <= 100) {
+                        updateProgressBar(i);
+                        i++;
+                    } else {
+                        clearInterval(intervalId);
+                    }
+                }, 50);
+            }
+
+            function updateProgressBar(newValue) {
+                var progressBar = document.getElementById("p");
+                progressBar.value = newValue;
+                progressBar.getElementsByTagName("span")[0].textContent = newValue;
+            }
+        </script>
+        <section>
+            <h2>元素使用示例</h2>
+            <p>完成百分比：<progress id="p" max="100"><span>0</span>%</progress></p>
+            <input type="button" onclick="button_onclick()" value="请点击">
+        </section>
+    </article>
+
+    <section>
+        <h1>刻度信息</h1>
+        <p><meter value="50" min="0" max="100"></meter></p>
+    </section>
+
+    <section>
+        <h1>文字标注</h1>
+        <ruby>被说明的文字
+
+        </ruby>
+
+    </section>
+
+
+    <section>
+        <h1>实训天气变化图</h1>
+        <ul>
+            <li>周一：晴
+                <p><meter value="31" min="-5" max="40"></meter>温度31&degC
+            </li>
+            </p>
+            </li>
+            <li>周二:多云</li>
+        </ul>
+
+    </section>
+
+
+    <section>
+        <p>我最喜欢的一部电影是<cite>第二十条</cite></p>
+    </section>
+
+
+    <section>
+        <h1>打折商品</h1>
+        <p><s>原价：100元</s></p>
+        <p>现价：80元</p>
+    </section>
+
+    <section>
+        <p>情人节字符画</p>
+        <pre>
+        </pre>
+    </section>
+</body>
+
+</html>

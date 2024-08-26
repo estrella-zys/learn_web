@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>输出表格</title>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var show = '<table style="border-collapse: collapse">';
+        var bgcolor;                              //声明背景颜色的变量
+        for (var i = 0; i < 5; i++) {                               //指定外层循环
+            if (i % 2 == 0) {                          //设置奇数行和偶数行的背景颜色
+                bgcolor = "#FFFFFF";
+            } else {
+                bgcolor = "#DDDDDD";
+            }
+            show += '<tr style="background-color: ' + bgcolor + '">';             //行标记及其背景颜色
+            for (var j = 1; j <= 6; j++) {                           //指定内层循环
+                show += '<td style="width: 50px;text-align: center;border: 1px solid">' + (i * 6 + j) + '</td>';  //单元格标记和显示的数字
+            }
+            show += '</tr>';                     //行的结束标记
+        }
+        document.write(show);
+    </script>
+    </table>
+</body>
+
+</html>

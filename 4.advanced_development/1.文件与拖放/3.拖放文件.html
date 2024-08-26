@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>拖放文字和图片效果</title>
+</head>
+
+<body onload="init()">
+    <div style="width: 500px; height: 500px; border: 1px solid black;">
+        <h1 style="text-align: center;">拖放文字和图片效果</h1>
+        <div
+            style="margin-top: 100px; width: 100%; height: 250px; display: flex; justify-content: center; align-items: center;">
+            <div id="show" style="width: 400px; height: 400px; border: 1px solid red;"></div>
+        </div>
+    </div>
+    <script>
+        function init() {
+            var dest = document.getElementById("show");
+            dest.addEventListener("dragover", function (ev) {
+                ev.stopPropagation();
+                ev.preventDefault();
+            }, false);
+            dest.addEventListener("dragend", function (ev) {
+                ev.stopPropagation();
+                ev.preventDefault();
+            }, false);
+            dest.addEventListener("drop", function (ev) {
+                ev.stopPropagation();
+                ev.preventDefault();
+                var file = ev.dataTransfer.files[0];
+                var reader = new FileReader();
+                if (file.type.substr(0, 5) == "image") {
+                    reader.onload = function (event) {
+                        dest.style.background = 'url(' + event.target.result + ') no-repeat center';
+                    };
+                    reader.readAsDataURL(file);
+                } else if (file.type.substr(0, 4) == "text") {
+                    reader.readAsText(file, "UTF-8");
+                    reader.onload = function () {
+                        dest.innerHTML = "<pre>" + this.result + "</pre>";
+                        dest.style.background = "white";
+                    }
+                } else {
+                    dest.innerHTML = "暂不支持此类文件的预览";
+                    dest.style.background = "white";
+                }
+            }, false);
+        }
+
+        // 设置页面属性，不执行默认处理（拒绝被拖放）
+        document.ondragover = function (e) {
+            e.preventDefault();
+        };
+        document.ondrop = function (e) {
+            e.preventDefault();
+        }
+        window.onload = init;
+    </script>
+
+
+</body>
+
+</html>

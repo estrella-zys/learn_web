@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        function add() {
+            var sum = 0;
+            for (var i = 1; i <= 10; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+    </script>
+    <script>
+        document.write(add());
+    </script>
+
+    <h1>带有参数函数调用</h1>
+    <script>
+        function price(x, y) {
+            document.write("价格为：" + (x * y));
+        }
+        price(2, 3);
+    </script>
+
+    <h1>带返回值</h1>
+    <script>
+        function re(x, y) {
+            return x + 2 * y;
+        }
+        document.write(re(2, 3));
+    </script>
+    <h1>匿名函数</h1>
+    <script>
+        var f = function (x, y, z, cnt) {
+            var count = 0;
+            for (var i = 1; i <= z; i++) {
+                if (i % x == 0 && i % y == 0) {
+                    document.write(i + " ");
+                    count++;
+                    if (count % cnt == 0) {
+                        document.write("<br>");
+                    }
+                }
+            }
+        }
+        f(3, 5, 1000, 6);
+    </script>
+
+
+    <h1>内置函数</h1>
+    <script>
+        var str1 = "123sb";
+        var str2 = "sb123";
+        document.write(parseInt(str1) + "<br>");
+        document.write(parseInt(str2) + "<br>");
+        document.write(parseFloat(str1) + "<br>");
+        var a = 1;
+        document.write(isNaN(a) + "<br>");
+        document.write(isFinite(a) + "<br>");
+        document.write(String(a) + "<br>");
+        document.write(eval("7*2+1"));
+        var u = "http://172.0.0.1:3002/practive.html";
+        dpcument.write(encodeURI(u));
+    </script>
+
+</body>
+
+</html>

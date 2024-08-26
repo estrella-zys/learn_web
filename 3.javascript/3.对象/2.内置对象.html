@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var a = new Array();
+        for (var i = 0; i <= 10; i++) {
+            a[i] = i + 1;
+            document.write(a[i] + " ");
+        }
+        document.write("<br>");
+        document.write(a.length + "<br>");
+        b = new Array(6);
+        for (var i = 0; i < b.length; i++) {
+            b[i] = i + 1;
+            document.write(b[i] + " ");
+        }
+        var c = new Array('a', 'b');
+        c[2] = 'q';
+        document.write("<br>");
+        delete c[1];
+        for (var i = 0; i < c.length; i++) {
+            document.write(c[i] + " ");
+        }
+
+        var x = '<p style = "color: red; font-size: 30px; font-style: italic; text-shadow: 2px 2px 2px #888888;">数组的添加和删除</p>';
+        document.write("<br>");
+        document.write(x);
+
+        document.write(a.length + "<br>");
+        document.write(a.concat(4)); //返回一个新数组，包含原数组的元素和新元素
+        document.write("<br>");
+
+
+        document.write(a.push(7)); //返回数组的长度
+        document.write("<br>");
+        document.write(a);
+        document.write("<br>");
+
+
+        document.write(a.unshift(10)); //返回数组的长度
+        document.write("<br>");
+        document.write(a);
+        document.write("<br>");
+
+
+        document.write(a.pop()); //返回数组的最后一个元素，并从数组中删除
+        document.write("<br>");
+        document.write(a);
+        document.write("<br>");
+
+
+        document.write(a.shift()); //返回数组的第一个元素，并从数组中删除
+        document.write("<br>");
+        document.write(a);
+
+
+        document.write(a.splice(2, 2));
+        document.write("<br>");
+        document.write(a.length);
+        document.write("<br>");
+
+
+        document.write(a.reverse());
+        document.write("<br>");
+
+        document.write(a.sort());
+        document.write("<br>");
+
+        document.write(a.slice(5, 7));
+        document.write("<br>");
+
+        var n = new Array(22, 33, 18, 9);
+        document.write(n.toString());
+        document.write("<br>");
+        document.write(n.join("+"));
+
+    </script>
+    <h1>string对象</h1>
+    <script>
+        var s = "abcdeftwtykag";
+        document.write(s.length);
+        document.write("<br>");
+        document.write(s.charAt(4));
+        document.write("<br>");
+        document.write(s.indexOf('c'));
+        document.write("<br>");
+        document.write(s.lastIndexOf('a'));
+        document.write("<br>");
+
+
+        document.write(s.slice(2, 5));//截取指定区间，不包含结束索引
+        document.write("<br>");
+        document.write(s.substr(2, 5));//截取指定长度
+        document.write("<br>");
+        document.write(s.substring(2, 5));//截取指定区间，不包含结束索引
+        document.write("<br>");
+
+
+        var s1 = "Javascript"
+        document.write(s1.toLowerCase());
+        document.write("<br>");
+        var s2 = "Html";
+        document.write(s2.toUpperCase() + "<br>");
+
+        var s3 = new Array('Html', 'Css');
+        document.write(s2.concat("html"));
+        document.write("<br>");
+        document.write(s2.split("h"));
+
+    </script>
+
+</body>
+
+</html>

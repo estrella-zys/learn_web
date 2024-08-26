@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        function table(x, y, w, h) {
+            var table = '<table style="border-collapse: collapse; border: 1px solid black;">';
+            for (var i = 1; i <= x; i++) {
+                table += '<tr>';
+                for (var j = 1; j <= y; j++) {
+                    table += '<td style="width: ' + w + 'px; height: ' + h + 'px; border: 1px solid black;">' + i * j + '</td>'; // 添加 border 属性
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            document.write(table);
+        }
+        table(3, 5, 50, 50); 
+    </script>
+
+
+</body>
+
+</html>

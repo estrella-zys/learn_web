@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>设置视频播放前的显示的图像以及显示控制栏</title>
+</head>
+
+<body>
+
+    <div class="cont" style="text-align: center">
+        <video src="MP4.mp4" controls poster="poster.jpg" id="video" style="width: 80%">请升级浏览器</video>
+        <button id="button" type="button" onclick="show1()" style="display: block;margin: 0 auto">隐藏控制栏</button>
+    </div>
+    <script type="text/javascript">
+        var video = document.getElementById("video");//获取视频
+        var btn = document.getElementById("button");//获取按钮
+        function show1() {
+            if (video.controls == true) {      //判断视频的控制栏是否为显示
+                video.controls = false;      //设置控制栏隐藏
+                btn.innerText = "显示控制栏"//添加提示文字
+            }
+            else {
+                video.controls = true;            //设置控制栏显示
+                btn.innerText = "隐藏控制栏"
+            }
+        }
+    </script>
+</body>
+
+</html>

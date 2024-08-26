@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body onload="init()" onresize="init()">
+    <div id="a" style="width: 200px; height: 200px; background-color: rosybrown;" onmouseover="blowup()"
+        onmouseout="handleClick()"></div>
+    <script>
+        var h = 0;
+        var w = 0;
+        var d = document.getElementById("a");
+
+        function init() {
+            h = parseInt(d.style.height, 10);
+            w = parseInt(d.style.width, 10);
+        }
+
+        function handleClick() {
+            h = parseInt(d.style.height, 10);
+            w = parseInt(d.style.width, 10);
+            d.style.width = (w - 50) + 'px';
+            d.style.height = (h - 50) + 'px';
+        }
+
+        function blowup() {
+            d.style.width = w + 'px';
+            d.style.height = h + 'px';
+        }
+
+        function init() {
+            alert("页面大小发生变化");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<body onload="al()">
+    <script>
+        function al() {
+            window.alert("Hello World!");
+        }
+    </script>
+    <script>
+
+        var bool = window.confirm("你要退出登陆么？");
+        if (bool) {
+            alert("您已退出登陆！");
+        }
+    </script>
+
+    <input type="button" value="添加文本框" onclick="addText()">
+
+    <script>
+        function addText() {
+            var x = document.createElement("input");
+            x.type = "text";
+            x.id = "myText";
+            document.body.appendChild(x);
+        }
+
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="text" value=“书山有路勤为径” id="myText">
+    <input type="button" value="修改文本框内容" onclick="changeText()">
+    <script>
+        function changeText() {
+            var x = document.getElementById("myText");
+            x.value = "学海无涯苦作舟";
+        }
+    </script>
+</body>
+
+</html>

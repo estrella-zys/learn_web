@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="clock">显示当前日期:</div>
+    <script>
+        function showTime() {
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth();
+            var day = d.getDate();
+            var week;
+            var w_arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            week = w_arr[d.getDay()];
+            document.getElementById("clock").innerHTML += year + "年" + (month + 1) + "月" + day + "日" + " " + week;
+        }
+        window.onload = showTime;
+    </script>
+
+    <h1>通过标签获取元素</h1>
+    <input type="button" value="确定">
+    <input type="button" value="取消">
+    <script>
+        function getButton() {
+            var a = document.getElementsByTagName("input");
+            for (var i = 0; i < a.length; i++) {
+                document.write(a[i].value + "<br>");
+            }
+        }
+        getButton();
+    </script>
+
+
+    <h1>通过类名获取元素</h1>
+    <div class="a">第一个div</div>
+    <script>
+        var a = document.getElementsByClassName("a");
+        for (var i = 0; i < a.length; i++) {
+            a[i].style.backgroundColor = "red";
+        }
+    </script>
+</body>
+
+</html>

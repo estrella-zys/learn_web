@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div
+        style="width: 500px; height: 500px; border: 1px solid #ccc; text-align: center; padding: 2%; background-color: aliceblue; box-shadow: 1px 1px 5px #777; margin: auto; border-radius: 5%;">
+        <h1 style="text-align: center;">新闻信息修改</h1>
+        <form name="form">
+            <div>
+                新闻标题：
+                <input name="title" type="text"
+                    style="width: 60%; height: 40px; background-color: white; border: 1px solid #ccc; border-radius: 5%; margin-bottom: 20px;"
+                    placeholder="请输入新闻标题" value="今日新闻头条" onfocus="stitle()">
+            </div>
+
+            <div style=" width: 100%; margin-top: 20px;">
+                <label style="vertical-align: top; display: inline-block; width: 100px;">新闻内容：</label>
+                <textarea name="content"
+                    style="width: calc(60%); height: 150px; background-color: white; border: 1px solid #ccc; border-radius: 5%; vertical-align: top;"
+                    onfocus="text()">近日，据相关人事报道</textarea>
+            </div>
+
+            <div>
+                <input type="button" value="add" style="width: 60px; padding: 5px; margin-top: 30px;">
+                <input type="button" value="reset" style="width: 60px; padding: 5px; margin-top: 30px;">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function stitle() {
+            document.form.title.select();
+        }
+
+        function text() {
+            document.form.content.select();
+        }
+    </script>
+    <br>
+
+
+    <input id="textfield" type="text" value="书籍是人类进步的阶梯">
+    <select onchange="change(event)">
+        <option value="black">黑色</option>
+        <option value="red">红色</option>
+        <option value="blue">蓝色</option>
+    </select>
+
+    <script>
+        function change(event) {
+            var t = document.getElementById("textfield");
+            t.style.color = event.target.value;
+        }
+    </script>
+    <br>
+    <br>
+
+
+    <div
+        style="width: 500px; height: 500px; border: 1px solid #ccc; padding: 2%; background-color: aliceblue; box-shadow: 1px 1px 5px #777; margin: auto; border-radius: 5%;">
+        <h1 style=" text-align: center;">房屋出租登记</h1>
+        <form name="form2" onsubmit="return alter()">
+            <div style="font-size: 20px;">
+                地段：
+                <select name="area">
+                    <option value="双流区">双流区</option>
+                    <option value="武侯区">武侯区</option>
+                    <option value="金牛区">金牛区</option>
+                    <option value="青羊区">青羊区</option>
+                </select>
+            </div>
+            <div style="font-size: 20px;;">
+                房源类别:
+                <select name="type">
+                    <option value="别墅">别墅</option>
+                    <option value="公寓">公寓</option>
+                    <option value="商住楼">商住楼</option>
+                </select>
+            </div>
+            <div style="font-size: 20px;;">
+                户型:
+                <select name="room">
+                    <option value="1室1厅">1室1厅</option>
+                    <option value="2室1厅">2室1厅</option>
+                    <option value="2室2厅">2室2厅</option>
+                    <option value="3室2厅">3室2厅</option>
+                </select>
+            </div>
+            <div style="font-size: 20px;">
+                小区名称：
+                <select name="xiaoqu">
+                    <option value="清华园">清华园</option>
+                    <option value="欧洲印象">欧洲印象</option>
+                    <option value="汤臣一品">汤臣一品</option>
+                </select>
+            </div>
+            <input type="submit" value="提交" style="width: 100px; padding: 5px; margin-top: 30px;">
+            <input type="reset" value="重置" style="width: 100px; padding: 5px; margin-top: 30px;">
+        </form>
+    </div>
+    <script>
+        function alter() {
+            var a = document.form2.area.value;
+            var b = document.form2.type.value;
+            var c = document.form2.room.value;
+            var d = document.form2.xiaoqu.value;
+            alert("地段：" + a + "\n" + " 房源类别：" + b + "\n" + " 户型：" + c + "\n" + " 小区名称：" + d);
+        }
+    </script>
+</body>
+
+</html>

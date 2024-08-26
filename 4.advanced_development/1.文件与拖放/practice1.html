@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="top: 10px; left: 50px;">
+        <img id="drag" src="image/1.jpg" style="width: 100px; position: absolute; top: 50px; left: 100px;"
+            draggable="true">
+    </div>
+    <script>
+        function init() {
+            var d = document.getElementById("drag");
+
+            d.addEventListener("dragstart", function (e) {
+                var dt = e.dataTransfer;
+                dt.effectAllowed = "all";
+            }, false);
+
+            document.addEventListener("dragover", function (e) {
+                e.preventDefault();
+            }, false);
+
+            document.addEventListener("drop", function (e) {
+                e.preventDefault();
+            }, false);
+
+            d.addEventListener("dragend", function (e) {
+                d.style.top = (e.clientY - 50) + "px";
+                d.style.left = (e.clientX - 50) + "px";
+                e.preventDefault();
+            }, false);
+
+
+        }
+        window.onload = init;
+    </script>
+</body>
+
+</html>

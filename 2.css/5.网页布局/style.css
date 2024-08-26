@@ -1,0 +1,182 @@
+.float {
+    width: 800px;
+    height: 800px;
+}
+
+.float img {
+    width: 100px;
+    height: 100px;
+}
+
+.float p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p:hover~div {
+    float: left;
+}
+
+p:active~div {
+    float: right;
+}
+
+.one,
+.two {
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.one {
+    float: left;
+}
+
+.two {
+    clear: left;
+
+}
+
+.position {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.position p {
+    font-size: 20px;
+    right: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    border: 2px solid red;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #eeeeee;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.list {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: bisque;
+    text-align: center;
+    cursor: pointer;
+}
+
+.list:hover {
+    background-color: #ddd;
+}
+
+.content {
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.product-description {
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 400px;
+}
+
+
+.p1 {
+    width: 50%;
+    height: auto;
+    display: flex;
+}
+
+.p2 {
+    width: 50%;
+
+}
+
+.practive {
+    width: 560px;
+    height: 550px;
+    margin-right: 20px;
+    background-image: url('image/l1.jpg');
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.border {
+    width: 450px;
+    height: 400px;
+    background-color: #333;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #ffffff
+}
+
+.practive1 {
+    width: 550px;
+    height: 250px;
+    margin-right: 20px;
+    background-image: url('image/r1.jpg');
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.practive2 {
+    width: 550px;
+    height: 250px;
+    margin-right: 20px;
+    background-image: url('image/r2.jpg');
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.border1 {
+    width: 450px;
+    height: 200px;
+    background-color: #333;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #ffffff
+}

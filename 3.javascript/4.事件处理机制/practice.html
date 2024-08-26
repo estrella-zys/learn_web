@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        li {
+            margin-top: 20px;
+        }
+
+        li a {
+            display: inline-block;
+            width: 120px;
+            font-size: 20px;
+            background-color: pink;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.5s ease-in-out;
+        }
+
+        li a:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="a" style="width: 200px; list-style: none; top: 50px;">
+        <li><a href="javascript:void(0)" onmouseover="onMouse(this)" onmouseout="onMouseOut(this)">HTML/CSS</a></li>
+        <li><a href="javascript:void(0)" onmouseover="onMouse(this)" onmouseout="onMouseOut(this)">JavaScript</a></li>
+        <li><a href="javascript:void(0)" onmouseover="onMouse(this)" onmouseout="onMouseOut(this)">jQuery</a></li>
+        <li><a href="javascript:void(0)" onmouseover="onMouse(this)" onmouseout="onMouseOut(this)">Bootstrap</a></li>
+    </ul>
+
+    <script>
+        function onMouse(element) {
+            element.style.width = "150px";
+        }
+
+        function onMouseOut(element) {
+            element.style.width = "120px";
+        }
+    </script>
+</body>
+
+</html>

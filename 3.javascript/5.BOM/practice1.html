@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="a" style="width: 300px; height: 300px; text-align: center; background-color: rosybrown;">
+        <h1>行路难</h1>
+        <p>金樽清酒斗十千，玉盘珍羞值万钱</p>
+        <p>停杯欲饮无恙，一杯心酒十年愁</p>
+        <p>欲渡黄河冰塞川，将登太行雪满山</p>
+        <p>闲来垂钓碧溪上，忽复乘舟梦日边</p>
+        <p>行路难，行路难，多歧路，今安在？</p>
+        <p>长风破浪会有时，直挂云帆济沧海</p>
+    </div>
+    <select id="select" onchange="changeColor(event)">
+        <option value="blue">蓝色</option>
+        <option value="red">红色</option>
+        <option value="green">绿色</option>
+        <option value="yellow">黄色</option>
+    </select>
+    <script>
+        function changeColor(event) {
+            var c = document.getElementById("a");
+            c.style.backgroundColor = event.target.value;
+        }
+    </script>
+
+
+
+</body>
+
+</html>

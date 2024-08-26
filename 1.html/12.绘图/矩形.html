@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12绘图</title>
+        <meta charset="utf-8"> 
+    </head>
+    <body>
+        <h1>矩形</h1>
+        <canvas id="cav" style="background-image: url('bg.png')" width="700" height="504"></canvas>
+        <script>
+            var cav = document.getElementById("cav").getContext("2d");
+            cav.strokeStyle = "rgb(147, 109, 70)";
+            cav.lineWidth = 2;
+            for(var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    cav.beginPath();
+                    cav.rect(115 + i * 30, 85 + j * 30, 30, 30);
+                    cav.stroke();
+                }
+            }
+            cav.beginPath();
+            cav.lineWidth = 4;
+            cav.strokeRect(100, 70, 330, 330);
+            cav.stroke();
+        </script>
+
+        <section>
+            
+        </section>
+    </body>
+</html>

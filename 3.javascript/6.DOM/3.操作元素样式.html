@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr id="myTr">
+            <td onmouseout="out(this)" onmouseover="over(this)">1</td>
+            <td onmouseout="out(this)" onmouseover="over(this)">2</td>
+            <td onmouseout="out(this)" onmouseover="over(this)"> 3</td>
+        </tr>
+        <tr id="myTr">
+            <td onmouseout="out(this)" onmouseover="over(this)">4</td>
+            <td onmouseout="out(this)" onmouseover="over(this)">5</td>
+            <td onmouseout="out(this)" onmouseover="over(this)">6</td>
+        </tr>
+    </table>
+    <script>
+        function out(element) {
+            element.style.backgroundColor = "#ccc";
+            element.style.color = "#000";
+        }
+        function over(element) {
+            element.style.backgroundColor = "#00f";
+            element.style.color = "#fff";
+        }
+    </script>
+</body>
+
+</html>

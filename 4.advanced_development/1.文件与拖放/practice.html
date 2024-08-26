@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div style="width: 600px; height: 500px; background-color: palevioletred;">
+        <br>
+        <p style="top: 50px; margin-left: 50px;">编辑我的照片墙</p>
+        <div
+            style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; margin-top: -60px;">
+            <div
+                style="width: 80%; height: 350px; background-color: pink; display: flex; flex-direction: column; align-items: center;">
+                <div style="display: flex; width: 100%;">
+                    <img src="image/face.png" style="width: 90px; height: 90px;">
+                    <div style="margin-left: 20px;">
+                        <h3>初相识</h3>
+                        <p>等级：18级</p>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; width: 100%; margin-left: 40px;">
+                    <div margin-left: 20px;>照片墙：</div>
+
+                </div>
+
+                <div id="result" style="width: 400px; height: 150px; display: block;">
+                    <img src="image/face.png " style="width: 50px; height: 50px;">
+                    <img src="image/face.png " style="width: 50px; height: 50px;">
+                    <img src="image/face.png " style="width: 50px; height: 50px;">
+                </div>
+                <div>
+                    <input id="file" type="file" multiple="multiple" style="margin-top :20px;">
+                    <input type="button" value="上传" onclick="showImage()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showImage() {
+            var file;
+            var temp = document.getElementById("result").innerHTML;
+            for (var i = 0; i < document.getElementById("file").files.length; i++) {
+                var file = document.getElementById("file").files[i];
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (e) {
+                    var result = document.getElementById("result");
+                    result.innerHTML += "&nbsp" + '<img src="' + this.result + '" alt="" style = "width: 50px; height: 50px;"/>'
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

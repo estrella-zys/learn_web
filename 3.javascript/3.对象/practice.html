@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <script>
+        var a = { 数学: 80, 语文: 85, 英语: 76, 物理: 91, 化学: 88 };
+        var s = Object.keys(a).sort(function (a1, b1) {
+            return a[a1] - a[b1];
+        });
+        var t = '<table border="1" cellspacing="0" >';
+        t += '<tr style = "text-align: center; background-color: #ccc;"><th style = "text-align: center; padding: 7px;">科目</th><th>成绩</th></tr>'
+        for (var i = 0; i < s.length; i++) {
+            t += '<tr style = "text-align: center;"><td>' + s[i] + '</td><td>' + a[s[i]] + '</td></tr>';
+        }
+
+        t += '</table>';
+        document.write(t);
+    </script>
+
+    <script>
+        function generate(x) {
+            // 将输入的字符串转换为数字
+            x = Number(x);
+
+            if (isNaN(x) || x == "") {
+                alert("请输入数字");
+            } else {
+                var s = "";
+                var a = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0";
+                var b = a.split(",");
+                for (var i = 0; i < x; i++) {
+                    var randomIndex = Math.floor(Math.random() * 10);
+                    s += b[randomIndex];
+                }
+                alert(s);
+            }
+        }
+    </script>
+    <br><br>
+    <form>
+        <input type="text" name="digit" size="6">
+        <input type="button" value="生成" onclick="generate(this.form.digit.value)">
+    </form>
+
+
+</body>
+
+</html>

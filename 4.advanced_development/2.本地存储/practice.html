@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div style="width: 400px; height: 400px;">
+        姓名：<input type="text" id="name"><br>
+        留言：<input type="text" id="text"><br>
+        <br>
+        <input type="button" value="保存" onclick="saveMessage()"><br>
+
+        <br>
+        请输入想要查询的姓名：
+        <input type="text" id="checkName"><br>
+        <input type="button" value="查询" onclick="loadMessage()">
+    </div>
+
+    <div id="message"></div>
+    <script>
+        function saveMessage() {
+            var name = document.getElementById("name").value;
+            var text = document.getElementById("text").value;
+            localStorage.setItem(name, text);
+        }
+
+        function loadMessage() {
+            var result = '<table border = "1" cellspacing = "0" cellpadding = "10">';
+            var flag = 1;
+
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var date = new Date();
+                var dateStr = date.toGMTString();
+                if (key == document.getElementById("checkName").value) {
+                    result += '<tr><td>' + key + '</td><td>' + value + '</td><td>' + dateStr + '</td></tr>';
+                    flag = 0;
+                }
+            }
+            result += '</table>';
+            if (flag == 1) {
+                alert("没有找到该用户的留言！");
+            } else {
+                document.getElementById("message").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+
+</html>

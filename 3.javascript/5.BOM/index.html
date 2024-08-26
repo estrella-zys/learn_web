@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .top {
+            width: 400px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .content {
+            width: 400px;
+            line-height: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function change(obj) {
+            var colorArr = obj.value.split(" ");
+            document.body.style.backgroundColor = colorArr[0];
+            document.body.style.color = colorArr[1];
+        }
+    </script>
+    <form name="form">
+        <select name="theme" onChange="change(this)">
+            <option value=" ">请选择主题</option>
+            <option value="black yellow">黑色主题</option>
+            <option value="gray lightgreen">灰色主题</option>
+            <option value="green white">绿色主题</option>
+        </select>
+    </form>
+    <div class="top">
+        李白《行路难•其一》
+    </div>
+    <div class="content">
+        金樽清酒斗十千，玉盘珍羞直万钱。
+        停杯投箸不能食，拔剑四顾心茫然。
+        欲渡黄河冰塞川，将登太行雪满山。
+        闲来垂钓碧溪上，忽复乘舟梦日边。
+        行路难！行路难！多歧路，今安在？
+        长风破浪会有时，直挂云帆济沧海。
+    </div>
+
+</body>
+
+</html>
