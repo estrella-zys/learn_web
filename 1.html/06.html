@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏示例</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            /* 使导航项居中对齐 */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin: 0 10px;
+            /* 设置每个导航项的间距 */
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+
+        }
+    </style>
+</head>
+
+<body onclick="document.designMode='on'">
+    <ul contenteditable="true">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">产品</a></li>
+    </ul>
+
+    <table>
+        <tr>
+            <td>javasprit</td>
+            <td>php</td>
+
+        </tr>
+    </table>
+    <div id="target" hidden="true" style="height: 80px;">
+        123
+    </div>
+    <button onclick="var target = document.getElementById('target'); target.hidden = !target.hidden;">显示/隐藏</button>
+</body>
+
+</html>

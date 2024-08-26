@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        input {
+            padding: 8px 20px;
+            border-radius: 3%;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form action="2146250199@qq.com" name="register" method="get">
+            <input type="text" name="username" placeholder="请输入用户名"><br>
+            <input type="password" name="password" placeholder="请输入密码">
+            <input type="submit" value="注册">
+        </form>
+    </section>
+
+    <section>
+        <h1>登录页面</h1>
+        <div
+            style="background-color: aliceblue; width: 80%; height: 300px; margin: auto; border-radius: 5%; box-shadow: rgba(0, 0, 0, 0.22) 0px 1px 2px 0px; padding: 20px;">
+            <h1 style="text-align: center;">登录</h1>
+            <form target="_blank">
+                <label for="username" style="margin-right: 5px;" autocomplete="on">用户名:</label>
+                <input type="text" name="username" placeholder="请输入用户名" required><br>
+                <label for="password" style="margin-right: 5px;" autocomplete="on">密码:</label>
+                <input type="password" name="password" placeholder="请输入密码" required><br>
+
+                <button type="submit"
+                    style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5%; cursor: pointer; text-align: center; margin-left: 100px; margin-bottom: 50px;">登录</button>
+                <input type="reset">
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h1>单选框</h1>
+        <form name="sex">
+            <input type="radio" name="sex" value="male" checked>男<br>
+            <input type="radio" name="sex" value="female">女
+        </form>
+        <h1>多选框</h1>
+        喜欢的水果：<br>
+        <form name="fruit">
+            <input type="checkbox">苹果<br>
+            <input type="checkbox">香蕉<br>
+        </form>
+        <h1>按钮</h1>
+        <input type="button" value="确定" onclick="goToPage()">
+        <input type="button" value="关闭窗口" onclick="window.close()">
+        <input type="button" value="打开窗口" onclick="window.open('https://www.baidu.com')">
+
+        <h1>图像域</h1>
+        <input type="image" src="11.png" style="border: none;" value="5明日科技.html">
+        <input type="image" src="22.png" style="border: none;">
+
+        <h1>文件域</h1>
+        <input type="file" name="file">
+
+        <h1>其他类型表单</h1>
+        <form>
+            <lable for="email"></lable>
+            <input type="email" name="email" placeholder="请输入邮箱" required>
+            <input type="submit" name="submit" value="提交">
+            <label for="website"></lable>
+                <input tupe="url" name="website" placeholder="请输入网址" required>
+                <input type="submit" name="submit" value="提交"></br>
+                <label for="date">日期：</label>
+                <input type="date" name="date" required>
+                <input type="week" name="week" required>
+                <input type="number" id="number" name="number" min="1" max="10" required>
+                <input type="range" name="range" min="0" max="10" step="1" required>
+
+        </form>
+        <form target="_blank" action="https://www.baidu.com" method="post">
+            <input type="search" name="search" placeholder="请输入搜索内容">
+            <input type="submit" name="submit" value="搜索">
+        </form>
+        <form>
+            <input type="text" name="list" list="list">
+            <datalist id="list" style="display: none;">
+                <option value="苹果">苹果</option>
+                <option value="香蕉">香蕉</option>
+                <o ption value="橘子">橘子</option>
+
+                    <option value="草莓">草莓</option>
+            </datalist>
+        </form>
+        <h1>output元素</h1>
+        <form output="x.value = parselent(number.value)">
+            <input type="range" name="number">
+            <output for="a" name="x"></output>
+        </form>
+
+        <h1>验证</h1>
+
+        <script>
+            function chaeck() {
+                var url = document.getElementById("url");
+                if (url.value() == "") {
+                    alter("请输入网址！");
+                    return false;
+                } else if (!url.checkValidity()) {
+                    alert("网址格式不正确！");
+                    return false;
+                }
+            }
+        </script>
+        <form onsubmit="return chaeck()">
+            <label for="url"></lable>
+                <input type="url" id="url" name="url" placeholder="请输入网址">
+                <input type="submit" name="submit" value="提交">
+        </form>
+        <h1>自定义验证</h1>
+        <script>
+            function check() {
+                var p1 = document.getElementById("p1");
+                var p2 = document.getElementById("p2");
+                if (p1.value != p2.value) {
+                    p2.setCustomValidity("两次输入的密码不一致！");
+                } else {
+                    p2.setCustomValidity("");
+                }
+            }
+        </script>
+
+        <form>
+            <input type="password" id="p1" name="p1" placeholder="请输入密码" required>
+            <input type="password" id="p2" name="p2" placeholder="请再次输入密码" required>
+            <input type="submit" value="提交" onclick="check()">
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        .a {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <a href=""><img src="chou.png" style="border-bottom: 0px;;"></a>
+    </div>
+
+
+    <video src="MP4.mp4" controls style="width : 80%" poster="poster.jpg" id="video"></video>
+    <button onclick="show()" value="显示控制栏" id="1">显示控制栏</button>
+    <script>
+        function show() {
+            var video = document.getElementById("video");
+            var b = document.getElementById("1");
+            if (video.controls) {
+                video.controls = false;
+                b.innerHTML('隐藏控制栏');
+            } else {
+                video.controls = true;
+                b.innerHTML('显示控制栏');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .custom-select {
+            appearance: none;
+            /* Remove default select styling */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: transparent;
+            /* Make background transparent */
+            border: none;
+            /* Remove border */
+            color: #fff;
+            /* Set text color to white */
+            padding: 10px 38px 10px 16px;
+            /* Add padding for positioning */
+            font-size: 16px;
+            /* Adjust font size */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="white" d="M2 0L0 2h4L2 0z"/></svg>');
+            /* Custom arrow */
+            background-repeat: no-repeat;
+            /* Prevent repeating the arrow */
+            background-position: right 10px center;
+            /* Position the arrow */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: inline;">
+        <ul style="list-style-type: none; background-color: #333; color: #fff; padding: 16px 20px; display: flex;">
+            <li>
+                <select class="custom-select">
+                    <option>HTML5</option>
+                    <option>CSS3</option>
+                    <option>jQuery</option>
+                    <option>JavaScript</option>
+                </select>
+            </li>
+            <li>
+                <select class="custom-select">
+                    <!-- Add your options here -->
+                </select>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

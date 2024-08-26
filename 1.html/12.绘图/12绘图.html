@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12绘图</title>
+        <meta charset="utf-8"> 
+    </head>
+    <body>
+        <h1>基本图形</h1>
+        <canvas width = "1000" height = "547" onload = "hug()" id = "1"></canvas>
+        <input type = "button" value = "挂星星" onclick = "show()">
+        <script>
+            var ctx = document.getElementById('1');
+            var cav = ctx.getContext('2d');
+
+            function draw(x, y, n, c) {
+                cav.beginPath();
+                cav.fillStyle = c;
+                cav.moveTo(x / n, y / n);
+                cav.lineTo((x + 50) / n, y / n);
+                cav.lineTo((x + 10) / n, (y + 30) / n);
+                cav.lineTo((x + 25) / n, (y - 20) / n);
+                cav.lineTo((x + 40) / n, (y + 30) / n);
+                cav.closePath();
+                cav.fill();
+            }
+
+            function hug() {
+                draw(160, 86, 0.7, '#ff0');
+                draw(487, 86, 0.7, '#ff0');
+                draw(357, 286, 1.3, '#0ff');
+                draw(320, 386, 1.5, '#f0f');
+                draw(600, 566, 2.0, '#eca9f2');
+                draw(500, 666, 2.0, '#eca9f2');
+                draw(1050, 286, 1.5, '#e0f084');
+                draw(1500, 486, 2.0, '#fe6869');
+                draw(1700, 686, 2.5, '#88c7ef');
+                draw(2550, 1000, 3.5, '#fff589');
+                draw(1150, 450, 1.5, '#ebcd97');
+                draw(2490, 1250, 3.5, '#f5d1ff');
+            }
+
+            function show() {
+                if (ctx.style.display == "block") {
+                    ctx.style.display = "none"; 
+                } else {
+                    ctx.style.display = "block";
+                    hug();
+                }
+            }
+        </script>
+        
+
+        <canvas height = "300" width = "300" id = "2"></canvas>
+        <script>
+            var cav = document.getElementById("2").getContext("2d");
+            cav.beginPath();
+            cav.fillStyle = "#DC1534";
+            cav.moveTo(130, 90);
+            cav.bezierCurveTo(90, 100, 90, 170, 130, 80);
+            cav.bezierCurveTo(170, 170, 170, 100, 130, 90);
+            cav.fill();
+            cav.beginPath();
+            cav.lineWidth = 3;
+            cav.moveTo(115, 99);
+            cav.bezierCurveTo(120, 70, 139, 70, 145, 99);
+            cav.stroke();
+            cav.beginPath();
+            cav.moveTo(125, 80);
+            cav.quadraticCurveTo(115, 55, 110, 75);
+            cav.stroke();
+            cav.beginPath();
+            cav.moveTo(135, 80);
+            cav.quadraticCurveTo(145, 55, 150, 75);
+            cav.stroke();
+            circle(130, 130, 10, 130, 90, 130, 180);
+            circle(115, 115, 5, 105, 115, 90, 100);
+            circle(110, 140, 5, 100, 135, 85, 130);
+            circle(115, 160, 5, 105, 155, 90, 170);
+            circle(145, 115, 5, 155, 115, 170, 100);
+            circle(150, 140, 5, 160, 135, 175, 130);
+            circle(145, 160, 5, 155, 155, 170, 170);
+
+            function circle(x, y, r, x1, y1, x2, y2) {
+                cav.beginPath();
+                cav.strokeStyle = "#b28335";
+                cav.fillStyle = "#000";
+                cav.arc(x, y, r, 0, Math.PI * 2, true);
+                cav.fill();
+                cav.stroke();
+                cav.beginPath();
+                cav.strokeStyle = "#000";
+                cav.lineWidth = 3;
+                cav.moveTo(x1, y1);
+                cav.lineTo(x2, y2);
+                cav.stroke();
+            }
+        </script>
+    </body>
+</html>
