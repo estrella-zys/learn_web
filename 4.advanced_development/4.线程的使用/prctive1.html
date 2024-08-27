@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="table">
+        计时器：
+    </div>
+    <input type="button" value="开始计时" onclick="startTimer()">
+    <input type="button" value="停止计时" onclick="stopTimer()">
+    <script>
+        var w;
+
+        function startTimer() {
+            if (typeof (w) === "undefined" || w === null) {
+                w = new Worker("js/js5.js");
+
+                w.onmessage = function (event) {
+                    document.getElementById("table").innerHTML = "计时器：" + event.data;
+                };
+            }
+        }
+
+        function stopTimer() {
+            if (w) {
+                w.terminate();
+                w = undefined;
+            }
+        }
+    </script>
+</body>
+
+</html>
