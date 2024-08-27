@@ -8,3 +8,4 @@
 - [x] .gitignore 文件配置；
 - [x] 如何使用 Github Pull Request；
 - [ ] 写一份 Git 学习手册；
+- [ ] 学习 Git Rebase；
