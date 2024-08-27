@@ -19,17 +19,36 @@
     <dl id="datalist"></dl>
 
     <script>
-        var db = openDatabase('db', '1.0', 'first database', 2 * 1024 * 1024);
+        var db;
+        var request = indexedDB.open('myDatabase', 1);
+        //新建数据库
+        request.onupgradeneeded = function (event) {
+            db = event.target.result;
 
-        // 创建表格
-        db.transaction(function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS msgDate(name TEXT, password TEXT, time INTEGER)', []);
-        });
+            if (!db.objectStoreNames.contains('msgDate')) {
+                var objectStore = db.createObjectStore('msgDate', { keyPath: 'id', autoIncrement: true });
+                objectStore.createIndex('name', 'name', { unique: false });
+                objectStore.createIndex('password', 'password', { unique: false });
+                objectStore.createIndex('time', 'time', { unique: false });
+            }
+        };
+
+        request.onsuccess = function (event) {
+            db = event.target.result;
+            showAllData();
+        };
+
+        request.onerror = function (event) {
+            console.error('Database error:', event.target.errorCode);
+        };
 
         document.getElementById('clear').onclick = function () {
-            db.transaction(function (tx) {
-                tx.executeSql('DROP TABLE msgDate', []);
-            });
+            var transaction = db.transaction(['msgDate'], 'readwrite');
+            var objectStore = transaction.objectStore('msgDate');
+            objectStore.clear().onsuccess = function () {
+                removeData();
+                alert('所有数据已清除');
+            };
         };
 
         document.getElementById('save').onclick = function () {
@@ -54,8 +73,7 @@
             dd.innerHTML = "密码：" + row.password;
 
             var tt = document.createElement('tt');
-            var t = new Date();
-            t.setTime(row.time);
+            var t = new Date(row.time);
             tt.innerHTML = "时间：" + t.toLocaleDateString() + " " + t.toLocaleTimeString();
 
             datalist.appendChild(dt);
@@ -64,28 +82,36 @@
         }
 
         function showAllData() {
-            db.transaction(function (tx) {
-                tx.executeSql('SELECT * FROM msgDate', [], function (tx, result) {
-                    removeData();
-                    for (var i = 0; i < result.rows.length; i++) {
-                        var row = result.rows.item(i);
-                        showData(row);
-                    }
-                });
-            });
+            var transaction = db.transaction(['msgDate'], 'readonly');
+            var objectStore = transaction.objectStore('msgDate');
+            var request = objectStore.openCursor();
+
+            request.onsuccess = function (event) {
+                var cursor = event.target.result;
+                removeData();
+                if (cursor) {
+                    showData(cursor.value);
+                    cursor.continue();
+                }
+            };
+
+            request.onerror = function (event) {
+                console.error('Error fetching data:', event.target.errorCode);
+            };
         }
 
         function addData(name, password, time) {
-            db.transaction(function (tx) {
-                tx.executeSql('INSERT INTO msgDate (name, password, time) VALUES (?, ?, ?)', [name, password, time],
-                    function (tx, result) {
-                        alert('登录成功！');
-                    },
-                    function (tx, error) {
-                        alert("Error: " + error.message);
-                    }
-                );
-            });
+            var transaction = db.transaction(['msgDate'], 'readwrite');
+            var objectStore = transaction.objectStore('msgDate');
+            var request = objectStore.add({ name: name, password: password, time: time });
+
+            request.onsuccess = function () {
+                alert('登录成功！');
+            };
+
+            request.onerror = function (event) {
+                alert("Error: " + event.target.error.message);
+            };
         }
 
         function saveData() {
@@ -95,9 +121,6 @@
             addData(name, password, time);
             showAllData();
         }
-
-        // 显示所有数据
-        showAllData();
     </script>
 </body>
 
