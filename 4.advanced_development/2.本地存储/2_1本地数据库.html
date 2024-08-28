@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var request = window.indexedDB.open("myDatabase", 1);
+        request.onerror = function (event) {
+            alert("数据库打开失败");
+        }
+
+        var db;
+        request.onsuccess = function (event) {
+            db = request.result;
+            alert("数据库打开成功");
+        }
+
+
+        request.onupgradeneeded = function (event) {
+            db = event.target.result;
+            c = db.createObjectStore("myObjectStore", { keyPath: "id" });
+            alert("数据库升级成功");
+        }
+
+
+    </script>
+</body>
+
+</html>
