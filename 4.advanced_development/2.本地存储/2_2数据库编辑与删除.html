@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form id="form">
+        创建新项目: <input type="text" name="project_name" style="padding: 8px;" required><br><br>
+        开始时间: <input type="date" name="begin" required><br><br>
+        结束时间: <input type="date" name="end" required><br><br>
+        参与人员: <input id="person" type="text" name="participants" placeholder="多人空格隔开"
+            style="padding: 8px; font-size: 15px;" required><br><br>
+        <p>补充说明: <textarea id="remark" name="description" style="padding: 8px; font-size: 15px;"></textarea><br><br></p>
+        <input type="button" value="确认创建 " style="padding: 10px;" onclick="submit()"><br><br>
+    </form>
+
+    <div id="result">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th>项目名称</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>参与人员</th>
+                    <th>补充说明</th>
+                    <th style="width: 70px;">操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="status" class="status">加载中...</div>
+    </div>
+
+    <script id="tplList" type="text/template">
+        <tr>
+            <td data-key="name" data-id="$id$" contenteditable="plaintext-only">$name$</td>
+            <td data-key="begin" data-id="$id$" contenteditable="plaintext-only">$begin$</td>
+            <td data-key="end" data-id="$id$" contenteditable="plaintext-only">$end$</td>
+            <td data-key="person" data-id="$id$" contenteditable="plaintext-only">$person$</td>
+            <td data-key="remark" data-id="$id$" contenteditable="plaintext-only">$remark$</td>
+            <td><a href="javascript:" role="button" class="jsListDel" data-id="$id$">删除</a></td>
+        </tr>
+    </script>
+    <script src="js.js"></script>
+</body>
+
+
+
+</html>
