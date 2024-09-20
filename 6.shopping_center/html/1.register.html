@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/login_register.css">
+    <style>
+        form .error {
+            display: flex;
+            color: red;
+            justify-content: center;
+            margin-top: 10px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<script src="../js/1.login_register.js"></script>
+
+<body>
+    <div class="logo"><img src="../image/logo.png" alt=""></div>
+    <div class="bd">
+        <div class="left"></div>
+        <div class="middle">
+            <img src="../image/big.jpg">
+        </div>
+        <div class="right">
+            <div class="form">
+                <h3 style="margin-top: 10px;text-align: center">注册</h3>
+                <form id="registerForm" method="post" onsubmit="return validateForm(event)" action="1.login.html">
+                    <div style="text-align: center;">
+                        <div class="input_group_1">
+                            <div class="input-group">
+                                <img src="../image/mansmall.jpg">
+                                <input type="text" id="username" placeholder="请输入用户名" required>
+                            </div>
+                            <div class="input-group">
+                                <img src="../image/phone.png">
+                                <input type="tel" id="phone" placeholder="请输入电话" required>
+                            </div>
+                            <div class="input-group">
+                                <span>&nbsp🔒&nbsp</span>
+                                <input id="pa1" type="password" placeholder="密码" maxlength="16" minlength="6" required>
+                                <img id="p1" src="../image/biyan.png" style="height: 15px;" onclick="visible1()">
+                            </div>
+                            <div class="input-group">
+                                <span>&nbsp🔒&nbsp</span>
+                                <input id="pa2" type="password" placeholder="确认密码" required>
+                                <img id="p2" src="../image/biyan.png" style="height: 15px;" onclick="visible2()">
+                            </div>
+                            <div class="input-group1">
+                                <div class="input" style="width: 60%;">
+                                    <input id="inputCode" type="text" style="padding: 5px;" required>
+                                </div>
+                                <div class="code"
+                                    style="width: 40%;  display: flex; justify-content: center; align-items: center;">
+                                    <input type="button" id="checkCode" value="获取验证码"
+                                        style="padding: 4px; cursor: pointer;" onclick="sendCode1(event)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-left: 20px; display: flex; margin-top: 20px">
+                        <div style="width: 80%;"> <input type="checkbox" id="remember" required>点击代表您同意<a
+                                href="服务协议.html">服务协议</a></div>
+                        <div style="float: right; margin-right: 5px;"> <a href="1.login.html"
+                                style="color: #444; text-decoration: none;">登录</a></div>
+                    </div>
+
+                    <div class="input_group_2"
+                        style="margin-top: 0; display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" id="register"
+                            style="margin-top: 20px; width: 70%; padding: 8px; background-color: #0c94d4;"
+                            onclick="register(event)">注册</button>
+                    </div>
+                    <div class="error" id="error" style="margin-top: -1px;">
+                        <p>用户名已存在</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/login_register.css">
+
+    <style>
+    </style>
+</head>
+
+<script src="../js/1.login_register.js"></script>
+
+<body>
+    <div class="logo"><img src="../image/logo.png" alt=""></div>
+    <div class="bd">
+        <div class="left"></div>
+        <div class="middle">
+            <img src="../image/big.jpg">
+        </div>
+        <div class="right">
+            <div class="form">
+                <h3 style="margin-top: 10px;text-align: center">登录</h3>
+                <form id="loginForm" method="post" onsubmit="return validateLoginForm(event)" action="3.html">
+                    <div style="text-align: center;">
+                        <div class="input_group_1">
+                            <div class="input-group">
+                                <img src="../image/mansmall.jpg">
+                                <input type="tel" id="tel" placeholder="请输入电话号码" required>
+                            </div>
+                            <div class="input-group">
+                                <span>&nbsp🔒&nbsp</span>
+                                <input type="password" id="pa1" placeholder="密码" required>
+                                <img src="../image/biyan.png" id="p1" onclick="visible1()">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-left: 20px; display: flex;">
+                        <div style="width: 80%;"> <input type="checkbox" id="remember">记住密码</div>
+                        <div style="float: right; margin-right: 5px;"> <a href="find_password.html"
+                                style="color: #444; text-decoration: none;;">找回密码</a></div>
+                    </div>
+                    <div class="input_group_2" style="margin-top: 0; text-align: center;">
+                        <button type="submit" id="login" style="margin-top: 20px;" onclick="login()">登录</button>
+                        <button type="button" id="register" style="margin-top: 20px;" onclick="register1()">注册</button>
+                    </div>
+                    <div class="error" id="error">密码错误或账号不存在，请重新输入！</div>
+                </form>
+                <div>
+                    <div style="margin-top: 100px; margin-left: 20px;">其他登陆方式</a></div>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div class="qq">
+                        <a href="login_phone.html">
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="margin-right: 5px;"><img src="../image/phone.png"></div>
+                                <div style="margin-top: -2px;">手机登录</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="qq">
+                        <a href="QQ.html">
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="margin-right: 5px;"><img src="../image/qq.png"></div>
+                                <div style="margin-top: -2px;">QQ登录</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="qq">
+                        <a href="weixin.html">
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="margin-right: 5px;"><img src="../image/weixin.png"></div>
+                                <div style="margin-top: -2px;">微信登录</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

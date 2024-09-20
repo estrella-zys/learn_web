@@ -1,0 +1,1086 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header {
+    width: 100%;
+    height: auto;
+}
+
+.header1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header1_1 {
+    width: auto;
+    text-align: center;
+    margin-right: 100px;
+}
+
+.header1_2 {
+    width: auto;
+    text-align: center;
+    margin-right: 0;
+    margin-right: 50px;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+
+}
+
+.header2_1 {
+    width: 30%;
+    text-align: center;
+}
+
+.header2_2 {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header2_2_1 {
+    width: 70%;
+    border: 1px solid red;
+    display: flex;
+}
+
+
+.input1 {
+    border: none;
+    padding: 10px;
+    width: 80%;
+    outline: none;
+}
+
+.middle {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.middle1 {
+    width: 15%;
+    padding: 10px;
+    background-color: #333;
+    height: 50%;
+    color: white;
+}
+
+.middle1_1 {
+    width: 100%;
+    text-align: center;
+}
+
+.middle1_2 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+    position: relative;
+    /* 添加相对定位 */
+}
+
+.middle1_2a {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+}
+
+/* 导航栏分类框 */
+.middle1_2 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 110%;
+    z-index: 3;
+    background-color: white;
+    border: 1px solid #ccc;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+.middle1_2:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.middle1_3 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+
+
+.middle1_2,
+.middle1_3,
+.middle1_4,
+.middle1_5,
+.middle1_6,
+.middle1_7,
+.middle1_8,
+.middle1_9,
+.middle1_10,
+.middle1_11 {
+    position: relative;
+}
+
+
+.middle1_3 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -40px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_3:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.middle1_4 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -75px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_4:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.middle1_5 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -115px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_5:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.middle1_6 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -150px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_6:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.middle1_7 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -190px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_7:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.middle1_8 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -225px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_8:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.middle1_9 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -265px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_9:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.middle1_10 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -300px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_10:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.middle1_11 .text {
+    width: 45vw;
+    height: 20vw;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: -340px;
+    left: 110%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    transition: visibility 0.3s, opacity 0.2s ease-in-out;
+}
+
+.middle1_11:hover .text,
+.text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.middle1_4 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_5 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_6 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_7 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_8 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_9 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_10 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_11 {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.middle1_2:hover,
+.middle1_3:hover,
+.middle1_4:hover,
+.middle1_5:hover,
+.middle1_6:hover,
+.middle1_7:hover,
+.middle1_8:hover,
+.middle1_9:hover,
+.middle1_10:hover,
+.middle1_11:hover {
+    color: red;
+}
+
+
+
+.right {
+    width: 20%;
+    height: 52.5%;
+    margin-right: 0;
+}
+
+.right1 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.right1_1 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.right1_2 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: gold;
+    border-radius: 0 10% 10% 0;
+}
+
+.right2 {
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #aaa;
+    color: red;
+}
+
+.right3 {
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+
+.right3_1 {
+    margin-top: 20px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right3_1 img {
+    border-radius: 50%;
+}
+
+.right3_2 {
+    margin-top: 20px;
+    width: 60%;
+}
+
+.right3_2_1 {
+    width: 100%;
+    height: 50%;
+}
+
+.right3_2_2 {
+    width: 100%;
+    height: 50%;
+}
+
+.right4 {
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right4_1 {
+    width: 30%;
+    background-color: orange;
+    margin-right: 5px;
+
+}
+
+.right4_1 button {
+    width: 100%;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5%;
+    padding: 5px;
+
+}
+
+
+.right5 {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.right5_1 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.right5_2 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.right5_3 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.right5_4 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.right5_5 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.right6 {
+    width: 100%;
+}
+
+.right6 img {
+    width: 100%;
+}
+
+.middle2 {
+    width: 61%;
+    height: 52.5%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.middle2_1 {
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+    display: flex;
+
+}
+
+.middle2_1 a {
+    font-weight: bold;
+    color: black;
+}
+
+.middle2_1_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1;
+
+}
+
+.middle2_2 {
+    margin-top: 5px;
+    height: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 10px;
+
+    bottom: -10px;
+}
+
+.bottom1 {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+
+}
+
+.bottom2 {
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+}
+
+.shop {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0;
+}
+
+.shop1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.shop2 {
+    width: 23%;
+    display: flex;
+    align-items: stretch;
+}
+
+
+.shop2_1 {
+    width: 60%;
+}
+
+.shop2_2 {
+    width: 40%;
+    padding-left: 10px;
+}
+
+.shop3 {
+    width: 23%;
+    display: flex;
+    align-items: stretch;
+}
+
+.shop3_1 {
+    width: 70%;
+}
+
+.shop3_2 {
+    width: 40%;
+    padding-left: 10px;
+    font-size: 90%;
+}
+
+.tt {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-top: 30px;
+}
+
+.tt_1 {
+    width: 90%;
+    font-size: 20px;
+    display: flex;
+    margin-bottom: -10px;
+
+}
+
+.tt_2 {
+    width: 10%;
+    margin-right: 5px;
+}
+
+
+.activity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity1 {
+    width: 23%;
+    position: relative;
+    padding-bottom: 23%;
+    overflow: hidden;
+}
+
+.activity1 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.activity1 input {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 7% 15%;
+    cursor: pointer;
+}
+
+.activity1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6vw solid purple;
+    border-right: 6vw solid transparent;
+    z-index: 1;
+}
+
+.activity1::after {
+    top: 4.5%;
+    left: 4.5%;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    content: "秒杀";
+    font-size: 1.3vw;
+}
+
+.activity2 {
+    width: 23%;
+    position: relative;
+    padding-bottom: 23%;
+    overflow: hidden;
+}
+
+.activity2 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.activity2 input {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 7% 15%;
+    cursor: pointer;
+}
+
+.activity2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6vw solid brown;
+    border-right: 6vw solid transparent;
+    z-index: 1;
+}
+
+.activity2::after {
+    top: 4.5%;
+    left: 4.5%;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    content: "特惠";
+    font-size: 1.3vw;
+
+}
+
+.activity3 {
+    width: 23%;
+    position: relative;
+    padding-bottom: 23%;
+    overflow: hidden;
+}
+
+.activity3 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.activity3 input {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 7% 15%;
+    cursor: pointer;
+}
+
+.activity3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6vw solid green;
+    border-right: 6vw solid transparent;
+    z-index: 1;
+}
+
+.activity3::after {
+    top: 4.5%;
+    left: 4.5%;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    content: "团购";
+    font-size: 1.3vw;
+}
+
+
+.activity4 {
+    width: 23%;
+    position: relative;
+    padding-bottom: 23%;
+    overflow: hidden;
+}
+
+.activity4 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.activity4 input {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 7% 15%;
+    cursor: pointer;
+}
+
+.activity4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6vw solid blue;
+    border-right: 6vw solid transparent;
+    z-index: 1;
+}
+
+.activity4::after {
+    top: 5%;
+    left: 5%;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    content: "超值";
+    font-size: 1.3vw;
+}
+
+
+.tt1 {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid black;
+
+}
+
+.tt1_1 {
+    width: 50%;
+    display: flex;
+    margin-top: 15px;
+}
+
+.tt1_2 {
+    margin-top: 28px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.tt2_2_1 {
+    width: 50%;
+}
+
+.tt2_2_2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.phone {
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+}
+
+.phone1 {
+    width: 20%;
+    background-color: aquamarine;
+    font-size: 15px;
+}
+
+.phone1_1 {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone1_1_1 {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 20px;
+}
+
+.phone1_2 {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone1_3 {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+
+.phone1_3 img {
+    width: 80%;
+    height: 80%;
+}
+
+.phone2 {
+    width: 20%;
+    border-right: 1px solid #ccc;
+}
+
+.phone2_1 {
+    width: 100%;
+    height: 50%;
+
+}
+
+.phone2_1_1 {
+    margin-top: 10px;
+    height: 60%;
+    padding: 10%;
+
+}
+
+.phone2_1_2 {
+    height: 40%;
+    display: flex;
+}
+
+
+.phone2_1_2_1 {
+    width: 80%;
+}
+
+.phone2_1_2_2 button {
+    height: 40%;
+    margin-right: 30px;
+    margin-top: 10px;
+    border: none;
+    background-image: url('../image/shop.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.phone2_1_1 img {
+    height: auto;
+    width: 80%;
+    transition: 0.5s ease;
+}
+
+.phone2_1_1:hover img {
+    transform: translateX(-10px);
+}
+
+.phone3 {
+    width: 20%;
+    border-right: 1px solid #ccc;
+}
+
+.phone3_1 {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone3_1 img {
+    width: 80%;
+    transition: all 0.5s ease;
+}
+
+.phone3_1:hover img {
+    transform: translateX(-10px);
+}
+
+
+.phone3_2 {
+    height: 40%;
+    display: flex;
+
+}
+
+.phone3_2_1 {
+    width: 80%;
+    margin-left: 20px;
+}
+
+.phone3_2_2 {
+    width: 20%;
+    display: flex;
+    float: right;
+    justify-content: center;
+}
+
+.phone3_2_2 img {
+    height: 20%;
+    margin-right: 30px;
+    margin-top: 10px;
+    transition: all 0.5s ease;
+
+}
